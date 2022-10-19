@@ -9,7 +9,7 @@ export default function Document() {
         <meta httpEquiv="cache-control" content="max-age=604800" />
         <meta
           name="description"
-          content="+976 76766676. Даатгагдсан дуудлагын жолоочын үйлчилгээ. duudduud.mn Duudlagiin joloochiin uilchilgee"
+          content="+976 76766676. Даатгагдсан, найдвартай, түргэн шуурхай дуудлагын жолоочын үйлчилгээ. duudduud.mn Duudlagiin joloochiin uilchilgee"
         />
         <meta
           name="keywords"

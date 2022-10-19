@@ -15,7 +15,7 @@ const FooterItem = ({ text, icon }) => {
     <Row mb={1}>
       {icon}
       <h6
-        title="duudlagiin jolooch duud, дуудлагын жолооч дууд"
+        title={`duudlagiin jolooch duud, дуудлагын жолооч дууд ${text}`}
         style={{
           margin: "0px 0px 0px 8px",
           textAlign: "left",
@@ -39,7 +39,7 @@ function Footer() {
     <Element style={{ backgroundColor: "#6c63ff" }} name="footer">
       <Container maxWidth="lg">
         <h5
-          title="duudlagiin jolooch duud, дуудлагын жолооч дууд"
+          title="duudlagiin jolooch duud, дуудлагын жолооч дууд contact"
           style={{
             textAlign: matches ? "center" : "left",
             color: "white",
@@ -92,7 +92,7 @@ function Footer() {
         )}
 
         <p
-          title="duudlagiin jolooch duud, дуудлагын жолооч дууд"
+          title="duudlagiin jolooch duud, дуудлагын жолооч дууд copyright"
           style={{
             textAlign: "center",
             color: "white",

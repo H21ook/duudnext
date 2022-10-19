@@ -42,34 +42,36 @@ const Header = ({ notFound }) => {
         src={"/assets/d-logo-white.svg"}
         height={40}
         width={40}
-        alt="duudlagiin jolooch duud, дуудлагын жолооч дууд"
-        title="duudlagiin jolooch duud, дуудлагын жолооч дууд"
+        alt="duudlagiin jolooch duud, дуудлагын жолооч дууд logo"
+        title="duudlagiin jolooch duud, дуудлагын жолооч дууд logo"
       />
     );
+  };
+
+  const renderToolbarStyle = () => {
+    if (notFound && matches) {
+      return { justifyContent: "center" };
+    }
+    return {};
   };
   return (
     <>
       <AppBar position="fixed">
         <Container maxWidth="lg">
-          <Toolbar
-            disableGutters
-            sx={{ justifyContent: matches ? "center" : "start" }}
-          >
-            {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+          <Toolbar disableGutters sx={{ ...renderToolbarStyle() }}>
             <Box sx={{ display: { xs: "none", sm: "flex" }, mr: 1 }}>
               {renderLogo()}
             </Box>
             <Typography
               variant="h6"
-              noWrap
               component="a"
               href="/"
               sx={{
                 mr: 2,
-                display: { xs: "none", md: "flex" },
+                display: { xs: "none", sm: "flex" },
                 fontFamily: "monospace",
                 fontWeight: 700,
-                letterSpacing: ".3rem",
+                letterSpacing: ".2rem",
                 color: "inherit",
                 textDecoration: "none",
               }}
@@ -102,11 +104,32 @@ const Header = ({ notFound }) => {
             <Box sx={{ display: { xs: "flex", sm: "none" }, mr: 1 }}>
               {renderLogo()}
             </Box>
-            <Box
-              sx={{
-                width: 100,
-              }}
-            >
+            {notFound ? (
+              <Box
+                sx={{
+                  width: 100,
+                }}
+              >
+                <Typography
+                  variant="h5"
+                  noWrap
+                  component="a"
+                  href="/"
+                  sx={{
+                    mr: 2,
+                    display: { xs: "flex", sm: "none" },
+                    flexGrow: 1,
+                    fontFamily: "monospace",
+                    fontWeight: 700,
+                    letterSpacing: ".2rem",
+                    color: "inherit",
+                    textDecoration: "none",
+                  }}
+                >
+                  DUUD
+                </Typography>
+              </Box>
+            ) : (
               <Typography
                 variant="h5"
                 noWrap
@@ -114,18 +137,19 @@ const Header = ({ notFound }) => {
                 href="/"
                 sx={{
                   mr: 2,
-                  display: { xs: "flex", md: "none" },
+                  display: { xs: "flex", sm: "none" },
                   flexGrow: 1,
                   fontFamily: "monospace",
                   fontWeight: 700,
-                  letterSpacing: ".3rem",
+                  letterSpacing: ".2rem",
                   color: "inherit",
                   textDecoration: "none",
                 }}
               >
                 DUUD
               </Typography>
-            </Box>
+            )}
+
             {notFound ? null : (
               <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "flex" } }}>
                 {pages.map((page, index) => (
